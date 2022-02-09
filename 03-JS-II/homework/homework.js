@@ -57,7 +57,7 @@ function saludo(idioma) {
     case 'ingles':
       return 'Hello!'
     default:
-      return 'Hola';
+      return 'Hola!';
       break;
   }
 }
@@ -92,10 +92,10 @@ function esDiezOCinco(numero) {
   // De lo contrario, devuelve "false"
   // Tu código:
   if(numero===10 || numero===5){
-    return 'true'
+    return true
   }
   else{
-    return 'false'
+    return false
   }
 }
 
@@ -104,10 +104,10 @@ function estaEnRango(numero) {
   // De lo contrario, devuelve "false"
   // Tu código:
   if(numero<50 && numero>20){
-    return 'true'
+    return true
   }
   else{
-    return 'false'
+    return false
   }
 }
 
@@ -136,6 +136,7 @@ function fizzBuzz(numero) {
   else if(numero % 5 === 0){
     return 'buzz'; 
   }
+  return numero;
 }
 
 function operadoresLogicos(num1, num2, num3) {
@@ -145,19 +146,21 @@ function operadoresLogicos(num1, num2, num3) {
   //Si num3 es más grande que num1 y num2, aumentar su valor en 1 y retornar el nuevo valor.
   //0 no es ni positivo ni negativo. Si alguno de los argumentos es 0, retornar "Error".
   //Si no se cumplen ninguna de las condiciones anteriores, retornar false. 
-  if((num1>num2 && num1>num3) && num1>0){
-    return 'Número 1 es mayor y positivo';
-  }
-  if(num1<0 || num2<0 || num3<0){
+  if(num1 < 0 || num2 < 0 || num3 < 0) {
     return 'Hay negativos';
   }
-  if(num3>num1 && num3>num2){
-    return num3+1
+  else if(num1 === 0 || num2 === 0 || num3 === 0) {
+    return "Error";
   }
-  if(num1===0 || num2===0 || num3===0){
-    return 'error'
+  else if(num1 > 0 && num1 > num2 && num1 > num3) {
+    return "Número 1 es mayor y positivo";
   }
-  return 'false'
+  else if(num3 > num1 && num3 > num2) {
+    return num3 + 1;
+  }
+  else {
+    return false;
+  }
   
 }
 
@@ -182,7 +185,7 @@ function esVerdadero(valor){
   //si su valor es true y “Soy falso” si su valor es false.
   //Escribe tu código aquí
   if(valor===true) return 'Soy verdadero';
-  else if(valor===false) return 'soy falso'
+  else if(valor===false) return 'Soy falso'
 }
 
 function tablaDelSeis(){
@@ -201,8 +204,8 @@ function tieneTresDigitos(numero){
   //Leer un número entero y retornar true si tiene 3 dígitos. Caso contrario, retorna false.
   //Escribe tu código aquí
   let size=numero.toString().length;
-  if(size===3) return 'true';
-  return 'false'
+  if(size===3) return true;
+  return false
 }
 
 function doWhile(numero) {
